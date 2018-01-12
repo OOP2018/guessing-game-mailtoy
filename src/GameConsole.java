@@ -5,7 +5,11 @@ import java.util.Scanner;
  */
 public class GameConsole {
 
-	/** play the game. */
+	/**
+	 * The play method plays a game using input from a user.
+	 * @param game is
+	 * @return guess 
+	 */
 	public int play(NumberGame game) {
 		Scanner console = new Scanner(System.in);
 		
@@ -14,11 +18,17 @@ public class GameConsole {
 		
 		// This is just an example.
 		System.out.println( game.getMessage() );
+		boolean correct;
+		int guess;
+		
+		do{
 		System.out.print("Your answer? ");
-		int guess = console.nextInt();
-		boolean correct = game.guess(guess);
+		guess = console.nextInt();
+		correct = game.guess(guess);
 		System.out.println( game.getMessage() );
+		} while( !correct );
 		return guess;
+		
 	}
 	
 }

@@ -9,6 +9,7 @@
 public class NumberGame {
 	/** A helpful message for user. */
 	private String message;
+	private int count;
 
     /** Initialize a new default game. */
     public NumberGame() {
@@ -62,4 +63,8 @@ public class NumberGame {
     public String toString() {
 		return "You should override this method for your game";
     }
+	
+	public int getCount(){
+		return count;
+	}
 }
