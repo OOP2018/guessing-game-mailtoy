@@ -1,5 +1,5 @@
 
-import java.util.Random; // for random numbers
+import java.util.Random; 
 
 /**
  * Game of guessing a secret number.-- write a description here

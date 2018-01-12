@@ -7,8 +7,9 @@ public class GameConsole {
 
 	/**
 	 * The play method plays a game using input from a user.
-	 * @param game is
-	 * @return guess 
+	 * 
+	 * @param play game on the console.
+	 * @return the secret number when user guesses it.
 	 */
 	public int play(NumberGame game) {
 		Scanner console = new Scanner(System.in);
