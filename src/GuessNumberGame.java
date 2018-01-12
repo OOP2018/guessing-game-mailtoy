@@ -1,5 +1,5 @@
 
-import java.util.Random; 
+import java.util.Random;
 
 /**
  * Game of guessing a secret number.-- write a description here
@@ -29,8 +29,7 @@ public class GuessNumberGame extends NumberGame {
 	/**
 	 * Create a random number between 1 and upperBound.
 	 * 
-	 * @param upperBound
-	 *            is the upper limit for random number
+	 * @param upperBound is the upper limit for random number
 	 * @return a random number between 1 and upperBound (inclusive)
 	 */
 	private int getRandomNumber(int upperBound) {
@@ -43,8 +42,10 @@ public class GuessNumberGame extends NumberGame {
 
 	/**
 	 * Evaluate a user's guess.
+	 * 
 	 * @param number is the user's answer, as an integer.
-	 * @return true if it is correct, false otherwise. Also set a message to help the user.
+	 * @return true if it is correct, false otherwise. Also set a message to
+	 *         help the user.
 	 * 
 	 */
 	public boolean guess(int number) {
@@ -61,8 +62,9 @@ public class GuessNumberGame extends NumberGame {
 	}
 
 	/**
-	 *  Return a value of upperBound from the User.
-	 *  @return a value of upperBound from the User.
+	 * Return a value of upperBound from the User.
+	 * 
+	 * @return a value of upperBound from the User.
 	 */
 	public int getUpperBound() {
 		return this.upperBound;
@@ -70,7 +72,8 @@ public class GuessNumberGame extends NumberGame {
 
 	/**
 	 * Describe the game.
-	 * @return
+	 * 
+	 * @return the message that you correct or not.
 	 */
 	public String toString() {
 		return "Guess a secret number between 1 and " + this.upperBound;
@@ -78,6 +81,7 @@ public class GuessNumberGame extends NumberGame {
 
 	/**
 	 * Return a count based on the most recent guess.
+	 * 
 	 * @return count based on most recent guess
 	 */
 	public int getCount() {
