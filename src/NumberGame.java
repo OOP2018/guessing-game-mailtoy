@@ -54,7 +54,7 @@ public class NumberGame {
 	 * guessing game, this should be the upper bound of secret.
 	 */
 	public int getUpperBound() {
-		return Integer.MAX_VALUE; // not very helpful :-)
+		return Integer.MAX_VALUE; 
 	}
 
 	/**

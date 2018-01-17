@@ -6,12 +6,12 @@
  */
 public class Main {
 	public static void main(String[] args) {
-		// upper limit for secret number in guessing game
+		
 		int upperBound = 100;
 		NumberGame game = new GuessNumberGame(upperBound);
 
 		GameConsole ui = new GameConsole();
-		GameSolver ui2 = new GameSolver(); // for auto play
+		GameSolver ui2 = new GameSolver(); 
 		
 		int solution = ui2.play(game);
 		System.out.println("play() returned " + solution);

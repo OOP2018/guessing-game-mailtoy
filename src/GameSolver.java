@@ -19,16 +19,16 @@ public class GameSolver {
 
 		System.out.println(game.toString());
 		int takeupperBound = game.getUpperBound() / 4;
-		int halfupperBound = game.getUpperBound() / 2;
-		while (!game.guess(halfupperBound)) {
+		int guess = game.getUpperBound() / 2;
+		while (!game.guess(guess)) {
 
 			System.out.print("Your answer? ");
 			if (game.getMessage().contains("too small")) {
-				System.out.println(halfupperBound);
-				halfupperBound = halfupperBound + takeupperBound;
+				System.out.println(guess);
+				guess = guess + takeupperBound;
 			} else if (game.getMessage().contains("too large")) {
-				System.out.println(halfupperBound);
-				halfupperBound = halfupperBound - takeupperBound;
+				System.out.println(guess);
+				guess = guess - takeupperBound;
 			}
 			if (takeupperBound != 1) {
 				takeupperBound = takeupperBound / 2;
@@ -37,8 +37,8 @@ public class GameSolver {
 			System.out.println(game.getMessage());
 
 		}
-		System.out.println("Right! The secret number is " + halfupperBound);
-		return halfupperBound;
+		System.out.println("Right! The secret number is " + guess);
+		return guess;
 
 	}
 
