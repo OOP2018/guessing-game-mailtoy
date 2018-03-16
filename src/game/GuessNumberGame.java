@@ -1,3 +1,4 @@
+package game;
 
 import java.util.Random;
 
@@ -52,12 +53,18 @@ public class GuessNumberGame extends NumberGame {
 		count++;
 		if (number == secret) {
 			setMessage("Right! The secret number is " + number);
+			setChanged();
+			notifyObservers(number);
 			return true;
 		} else if (number < secret) {
 			setMessage("Sorry, too small.");
+			setChanged();
+			notifyObservers(number);
 			return false;
 		}
 		setMessage("Sorry, too large.");
+		setChanged();
+		notifyObservers(number);
 		return false;
 	}
 
