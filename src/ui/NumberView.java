@@ -13,6 +13,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 /**
+ * A Controller for a window that shows the recent value of a NumberGame.
  * 
  * @author Kanchanok Kannee
  *
@@ -24,47 +25,58 @@ public class NumberView extends Stage implements Observer {
 	private NumberGame game;
 	/** the label that shows the counter value. */
 	private Label label;
-	
+
+	/**
+	 * Initialize a NumberView, which shows recent value.
+	 * 
+	 * @param game
+	 *            the NumberGame to show.
+	 */
 	public NumberView(NumberGame game) {
 		this.game = game;
 		initComponents();
 	}
-	
+
+	/**
+	 * Initialize anything your controller or UI needs.
+	 */
 	private void initComponents() {
 		stage = this;
 		HBox root = new HBox();
 		root.setPadding(new Insets(10));
 		root.setAlignment(Pos.CENTER);
 		label = new Label("   ");
-		// make the label big enough
 		label.setPrefWidth(144);
 		label.setFont(new Font("Arial", 80.0));
 		label.setAlignment(Pos.CENTER);
-		// Add the label to the HBox.  You can all more components, too.
 		root.getChildren().add(label);
-		// Create a Scene using HBox as the root element
 		Scene scene = new Scene(root);
-		// show the scene on the stage
 		this.setScene(scene);
 		this.setTitle("Number");
 		this.sizeToScene();
 	}
-	
+
 	/** Show the window and update the counter value. */
 	public void run() {
 		stage.show();
 		displayNumber(0);
 	}
-	
+
+	/**
+	 * Show the recent number.
+	 * 
+	 * @param number
+	 *            the recent number.
+	 */
 	public void displayNumber(int number) {
-		label.setText( String.format("%2d", number) );
+		label.setText(String.format("%2d", number));
 	}
 
 	@Override
 	public void update(Observable o, Object arg) {
-		int number = (int)arg;
+		int number = (int) arg;
 		displayNumber(number);
-		
+
 	}
 
 }

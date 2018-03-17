@@ -15,12 +15,13 @@ import javafx.stage.Stage;
 
 /**
  * Main class to launch the program.
+ * 
  * @author Kanchanok Kannee
  *
  */
 public class Main extends Application {
 	NumberGame game = new GuessNumberGame(100);
-	
+
 	/**
 	 * Initiate the program.
 	 */
@@ -37,30 +38,31 @@ public class Main extends Application {
 			// Create the UI. This will instantiate the controller object, too.
 			Parent root = loader.load();
 			Graphical controller = loader.getController();
-			controller.setGuess((GuessNumberGame)game);
+			controller.setGuess((GuessNumberGame) game);
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.sizeToScene();
 			primaryStage.setTitle("Guessing Game.");
 			primaryStage.show();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			return;
 		}
-		ConsoleObserver view = new ConsoleObserver(game);
+		ConsoleView view = new ConsoleView(game);
 		game.addObserver(view);
-		
+
 		CounterView view2 = new CounterView(game);
 		game.addObserver(view2);
 		view2.run();
-		
+
 		NumberView view3 = new NumberView(game);
 		game.addObserver(view3);
 		view3.run();
 	}
-	
+
 	/**
 	 * Run the program.
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
