@@ -1,9 +1,6 @@
 package ui;
 
 import java.net.URL;
-
-import com.sun.org.apache.bcel.internal.generic.NEW;
-
 import game.GuessNumberGame;
 import game.NumberGame;
 import javafx.application.Application;

@@ -6,7 +6,7 @@ package game;
  * 
  * @author Kanchanok Kannee
  */
-public class Main {
+public class MainConsole {
 	public static void main(String[] args) {
 		
 		int upperBound = 100;
@@ -15,7 +15,7 @@ public class Main {
 		GameConsole ui = new GameConsole();
 		GameSolver ui2 = new GameSolver(); 
 		
-		int solution = ui2.play(game);
+		int solution = ui.play(game);
 		System.out.println("play() returned " + solution);
 		System.out.println(game.getCount());
 	}
